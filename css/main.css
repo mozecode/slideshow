@@ -1,0 +1,9 @@
+.isHidden{display: none;}
+
+ul li {list-style: none;}
+
+.container{
+	height:450px;
+	width:450px;
+	overflow:hidden;
+}
