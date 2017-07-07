@@ -34,7 +34,7 @@ function autoRotate(currentIndex){
 
 	let photo=$('li').eq(currentIndex);
 
-		photo.fadeIn("slow").delay(5000);
+		photo.fadeIn("slow");
 		photo.fadeOut("slow");
 }
 
@@ -46,6 +46,23 @@ let slide =setInterval(function(){
 	autoRotate(currentIndex);
 }, 3000);
 
+$('.next').click(function(){
+	clearInterval(slide);
+	currentIndex++;
+	if (currentIndex===photoArray.length){
+			currentIndex= 0;
+		}
+	autoRotate(currentIndex);
+});
+
+$('.prev').click(function(){
+	clearInterval(slide);
+	currentIndex--;
+	if (currentIndex<0){
+		currentIndex=0;
+	}
+	autoRotate(currentIndex);
+})
 getPhotos(currentIndex);
 //buttons with click events
 
